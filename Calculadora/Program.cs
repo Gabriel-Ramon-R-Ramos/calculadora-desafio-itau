@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Calculadora
@@ -8,25 +7,42 @@ namespace Calculadora
     {
         static void Main(string[] args)
         {
-            Queue<Operacoes> filaOperacoes = new Queue<Operacoes>();
-            filaOperacoes.Enqueue(new Operacoes { valorA = 2, valorB = 3, operador = '+' });
-            filaOperacoes.Enqueue(new Operacoes { valorA = 14, valorB = 8, operador = '-' });
-            filaOperacoes.Enqueue(new Operacoes { valorA = 5, valorB = 6, operador = '*' });
-            filaOperacoes.Enqueue(new Operacoes { valorA = 2147483647, valorB = 2, operador = '+' });
-            filaOperacoes.Enqueue(new Operacoes { valorA = 18, valorB = 3, operador = '/' }); //Implemente o calculo de divisao
+            Calculadora calculadora = new();
+            Stack<double> pilhaResultados = new();
+            Queue<Operacoes> filaOperacoes = new();
 
-            Calculadora calculadora = new Calculadora();
+            filaOperacoes.Enqueue(new Operacoes { ValorA = 2, ValorB = 3, Operador = '+' });
+            filaOperacoes.Enqueue(new Operacoes { ValorA = 14, ValorB = 8, Operador = '-' });
+            filaOperacoes.Enqueue(new Operacoes { ValorA = 5, ValorB = 6, Operador = '*' });
+            filaOperacoes.Enqueue(new Operacoes { ValorA = 2147483647, ValorB = 2, Operador = '+' });
+            filaOperacoes.Enqueue(new Operacoes { ValorA = 18, ValorB = 3, Operador = '/' });
 
-            
-            while (filaOperacoes.Count >= 0)
+            while (filaOperacoes.Count > 0)
             {
-                Operacoes operacao = filaOperacoes.Peek();
+                Operacoes operacao = filaOperacoes.Dequeue();
                 calculadora.calcular(operacao);
-                Console.WriteLine("{0} {1} {2} = {3}", operacao.valorA,operacao.operador,operacao.valorB, operacao.resultado);
+                Console.WriteLine("{0} {1} {2} = {3}", operacao.ValorA, operacao.Operador, operacao.ValorB, operacao.Resultado);
+                pilhaResultados.Push(operacao.Resultado);
+
+                Console.WriteLine("--------------");
+                Console.WriteLine("Lista de operações a serem processadas:");
+                int i = 5;
+                foreach (var item in filaOperacoes)
+                {
+                    Console.WriteLine("item {0}: {1} {2} {3}", i, item.ValorA, item.Operador, item.ValorB);
+                    i--;
+                }
+                Console.WriteLine("--------------\n");
             }
 
-          
-           
+            Console.WriteLine("Resultados totais obtidos: " + pilhaResultados.Count);
+            Console.WriteLine("--------------");
+            Console.WriteLine("Resultados:");
+            while (pilhaResultados.Count > 0)
+            {
+                double resultado = pilhaResultados.Pop();
+                Console.WriteLine(resultado);
+            }
         }
     }
 }

@@ -3,30 +3,57 @@ namespace Calculadora
 {
     public class Calculadora
     {
-        
+
         public Operacoes calcular(Operacoes operacao)
         {
-            switch(operacao.operador)
+            switch (operacao.Operador)
             {
-                case '+': operacao.resultado= soma(operacao);break;
-                case '-': operacao.resultado = subtracao(operacao);break;
-                case '*': operacao.resultado = multiplicacao(operacao);break;
-                default: operacao.resultado = 0; break;
+                case '+':
+                    operacao.Resultado = Soma(operacao);
+                    break;
+                case '-':
+                    operacao.Resultado = Subtracao(operacao);
+                    break;
+                case '*':
+                    operacao.Resultado = Multiplicacao(operacao);
+                    break;
+                case '/':
+                    operacao.Resultado = Divisao(operacao);
+                    break;
+                default:
+                    operacao.Resultado = 0;
+                    break;
             }
             return operacao;
         }
-        public int soma(Operacoes operacao)
+        public long Soma(Operacoes operacao)
         {
-            return operacao.valorA + operacao.valorB;
+            return operacao.ValorA + operacao.ValorB;
         }
-        public int subtracao(Operacoes operacao)
+        public long Subtracao(Operacoes operacao)
         {
-            return operacao.valorA - operacao.valorB;
+            return operacao.ValorA - operacao.ValorB;
         }
-        public int multiplicacao(Operacoes operacao)
+        public long Multiplicacao(Operacoes operacao)
         {
-            return operacao.valorA * operacao.valorB;
+            return operacao.ValorA * operacao.ValorB;
         }
-       
+        public double Divisao(Operacoes operacao)
+        {
+            try
+            {
+                return operacao.ValorA / operacao.ValorB;
+            }
+            catch (System.DivideByZeroException)
+            {
+                Console.WriteLine("Não é possível fazer uma divisão por Zero");
+                throw;
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Houve um erro inesperado, por favor verifique sua conta");
+                throw;
+            }
+        }
     }
 }
