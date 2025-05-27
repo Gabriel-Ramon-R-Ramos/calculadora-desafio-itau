@@ -29,24 +29,11 @@ namespace Calculadora
         }
         public static double Divisao(Operacoes operacao)
         {
-            try
+            if (operacao.ValorB == 0)
             {
-                if (operacao.ValorB == 0)
-                {
-                     throw new DivideByZeroException("Tentativa de dividir por zero.");
-                }
-                return (double)operacao.ValorA / operacao.ValorB;
+                    throw new DivideByZeroException("Tentativa de dividir por zero. Não é possível fazer uma divisão por Zero.");
             }
-            catch (System.DivideByZeroException)
-            {
-                Console.WriteLine("Não é possível fazer uma divisão por Zero");
-                throw;
-            }
-            catch (System.Exception)
-            {
-                Console.WriteLine("Houve um erro inesperado, por favor verifique sua expressão");
-                throw;
-            }
+            return (double)operacao.ValorA / operacao.ValorB;
         }
     }
 }

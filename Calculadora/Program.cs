@@ -15,7 +15,7 @@ namespace Calculadora
             filaOperacoes.Enqueue(new Operacoes { ValorA = 14, ValorB = 8, Operador = '-' });
             filaOperacoes.Enqueue(new Operacoes { ValorA = 5, ValorB = 6, Operador = '*' });
             filaOperacoes.Enqueue(new Operacoes { ValorA = 2147483647, ValorB = 2, Operador = '+' });
-            filaOperacoes.Enqueue(new Operacoes { ValorA = 18, ValorB = 0, Operador = '/' });
+            filaOperacoes.Enqueue(new Operacoes { ValorA = 18, ValorB = 6, Operador = '/' });
 
             while (filaOperacoes.Count > 0)
             {
@@ -24,7 +24,7 @@ namespace Calculadora
 
                 Console.WriteLine("Operação atual:");
                 Console.WriteLine("{0} {1} {2} = {3}", operacao.ValorA, operacao.Operador, operacao.ValorB, operacao.Resultado);
-                
+
                 pilhaResultados.Push(operacao.Resultado);
                 LerFilaOperacoes(filaOperacoes);
             }
