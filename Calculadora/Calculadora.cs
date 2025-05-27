@@ -1,48 +1,41 @@
 ﻿using System;
 namespace Calculadora
 {
-    public class Calculadora
+    public static class Calculadora
     {
-
-        public Operacoes calcular(Operacoes operacao)
+        public static Operacoes Calcular(Operacoes operacao)
         {
-            switch (operacao.Operador)
+            operacao.Resultado = operacao.Operador switch
             {
-                case '+':
-                    operacao.Resultado = Soma(operacao);
-                    break;
-                case '-':
-                    operacao.Resultado = Subtracao(operacao);
-                    break;
-                case '*':
-                    operacao.Resultado = Multiplicacao(operacao);
-                    break;
-                case '/':
-                    operacao.Resultado = Divisao(operacao);
-                    break;
-                default:
-                    operacao.Resultado = 0;
-                    break;
-            }
+                '+' => Soma(operacao),
+                '-' => Subtracao(operacao),
+                '*' => Multiplicacao(operacao),
+                '/' => Divisao(operacao),
+                _ => 0,
+            };
             return operacao;
         }
-        public long Soma(Operacoes operacao)
+        public static long Soma(Operacoes operacao)
         {
             return operacao.ValorA + operacao.ValorB;
         }
-        public long Subtracao(Operacoes operacao)
+        public static long Subtracao(Operacoes operacao)
         {
             return operacao.ValorA - operacao.ValorB;
         }
-        public long Multiplicacao(Operacoes operacao)
+        public static long Multiplicacao(Operacoes operacao)
         {
             return operacao.ValorA * operacao.ValorB;
         }
-        public double Divisao(Operacoes operacao)
+        public static double Divisao(Operacoes operacao)
         {
             try
             {
-                return operacao.ValorA / operacao.ValorB;
+                if (operacao.ValorB == 0)
+                {
+                     throw new DivideByZeroException("Tentativa de dividir por zero.");
+                }
+                return (double)operacao.ValorA / operacao.ValorB;
             }
             catch (System.DivideByZeroException)
             {
@@ -51,7 +44,7 @@ namespace Calculadora
             }
             catch (System.Exception)
             {
-                Console.WriteLine("Houve um erro inesperado, por favor verifique sua conta");
+                Console.WriteLine("Houve um erro inesperado, por favor verifique sua expressão");
                 throw;
             }
         }
