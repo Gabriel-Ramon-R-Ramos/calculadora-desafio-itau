@@ -1,25 +1,15 @@
 # Calculadora
-Case para Engenharia de Software JR
+Case para estágio do itaú
 
-Você precisa corrigir os seguintes problemas no codigo:
-  1. Aplicação só está processando o primeiro item da fila infinitamente.
-  2. Implemente a funcionalidade de divisão.
-  3. Aplicação não está calculando a penultima operação corretamente.
-     
-     	Saída esperada no console:
-     
-     		14 - 8 = 6
-     
-     		5 * 6 = 30
-     
-     		2147483647 + 2 = 2147483649
-     
-     		18 / 3 = 6
+## Informações do desafio
+O desafio da Calculadora é um fork do desafio de [fnoriduki](https://github.com/fnoriduki/Calculadora). Toda explicação do case pode ser econtrada no github citado.
 
-  5. Implemente uma funcionalidade para imprimir toda a lista de operaçõoes a ser processada após cada calculo realizado.
-  6. Crie uma nova pilha (Stack) para guardar o resultado de cada calculo efetuado e imprima a pilha ao final
+## Organização do projeto
+Para solucionar esse desafio o projeto consta com 2 versões:
 
+| Versão | Link | Alteração |
+|--------|------|-----------|
+| Calculadora | [V1](https://github.com/Gabriel-Ramon-R-Ramos/calculadora-desafio-itau/tree/main/Calculadora) | Versão recomendada |
+| Calculadora 2 | [V2](#) | Tratativas dos erros |
 
-Não existe resposta certa ou errada, o objetivo do case é avaliar a linha de raciocínio de cada candidato.
-Você é livre para fazer na linguagem de sua preferência, desde que aplique as mesmas funcionalidades e tarefas deste case.
-Dica: Utilize Visual Code ou Visual Studio Community para realizar as tarefas.
+> Cada link contém um **README.md** com suas respectivas explicações e correções.
