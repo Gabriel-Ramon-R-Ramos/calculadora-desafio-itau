@@ -8,7 +8,7 @@ namespace Calculadora
         public static void LerFilaOperacoes(Queue<Operacoes> filaOperacoes)
         {
             Console.WriteLine("--------------");
-            Console.WriteLine("Lista de operações a serem processadas:");
+            Console.WriteLine("Processos pendentes:");
             int i = filaOperacoes.Count;
             foreach (var item in filaOperacoes)
             {
