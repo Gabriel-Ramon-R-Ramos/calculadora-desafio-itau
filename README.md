@@ -13,10 +13,10 @@ O desafio é um fork do repositório original de [@fnoriduki](https://github.com
 
 Para resolver o desafio de forma didática e flexível, o projeto foi dividido em duas versões:
 
-| Versão           | Link          | Descrição                                                                             |
-| ---------------- | ------------- | ------------------------------------------------------------------------------------- |
-| `Calculadora`    | [Acessar V1](https://github.com/Gabriel-Ramon-R-Ramos/calculadora-desafio-itau/tree/main/Calculadora) | ✅ **Versão recomendada** — com todas as funcionalidades e ajustes solicitados no case |
-| `Calculadora V2` | [Acessar V2](https://github.com/Gabriel-Ramon-R-Ramos/calculadora-desafio-itau/tree/main/Calculadora) | ⚠️ Versão alternativa — contém apenas tratativas de erros, sem todos os requisitos   |
+| Versão           | Link          | Descrição                                                                                  |
+| ---------------- | ------------- | ------------------------------------------------------------------------------------------ |
+| `Calculadora`    | [Acessar V1](https://github.com/Gabriel-Ramon-R-Ramos/calculadora-desafio-itau/tree/main/Calculadora)      | ✅ **Versão recomendada** — com todas as funcionalidades e ajustes solicitados no case |
+| `Calculadora V2` | [Acessar V2](https://github.com/Gabriel-Ramon-R-Ramos/calculadora-desafio-itau/tree/main/Calculadora%20V2) | ⚠️ Versão alternativa — contém apenas tratativas de erros, sem todos os requisitos   |
 
 > Cada pasta contém seu próprio `README.md` com explicações específicas sobre as alterações feitas, decisões técnicas e organização do código.
 
